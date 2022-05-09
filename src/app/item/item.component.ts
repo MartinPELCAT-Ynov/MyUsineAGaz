@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-item',
@@ -8,7 +8,16 @@ export class ItemComponent implements OnInit {
   @Input() number!: number;
   @Input() color!: string;
 
-  constructor() {}
+  @Output() killedEvent: EventEmitter<number> = new EventEmitter<number>();
+
+  killed = false;
+
+  killMeNow() {
+    this.killed = true;
+    setTimeout(() => {
+      this.killedEvent.emit(this.number);
+    }, 900);
+  }
 
   ngOnInit(): void {}
 }

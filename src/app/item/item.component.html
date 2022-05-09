@@ -1,4 +1,11 @@
-<div class="bg-white shadow-lg flex space-x-4 p-2 rounded-2xl items-center">
+<div
+  class="bg-white shadow-lg flex space-x-4 rounded-2xl items-center"
+  [ngClass]="{
+    'animate-ping overflow-hidden duration-1000': killed,
+    'p-2': !killed
+  }"
+  (click)="killMeNow()"
+>
   <div
     class="h-11 w-11 rounded-full"
     [ngClass]="{
