@@ -1,0 +1,14 @@
+<div class="bg-white shadow-lg flex space-x-4 p-2 rounded-2xl items-center">
+  <div
+    class="h-11 w-11 rounded-full"
+    [ngClass]="{
+      'bg-[#F04040]': number === 1,
+      'bg-[#8A6F6F]': number === 2,
+      'bg-[#C2F040]': number === 3
+    }"
+  ></div>
+  <div class="flex flex-col justify-between">
+    <p class="font-bold">Headline {{ number }}</p>
+    <p>Lorem ipsum dolor sit</p>
+  </div>
+</div>
